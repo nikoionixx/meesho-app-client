@@ -1,6 +1,6 @@
 import React from "react";
-import { MeeshoLogo } from '../../../shared/components/logo/logo.component';
-import { TermsAndConditions } from '../../../shared/components/termsandconditions/termsandconditions.component';
+import { MeeshoLogo } from '../../../../shared/components/logo/logo.component';
+import { TermsAndConditions } from '../../../../shared/components/termsandconditions/termsandconditions.component';
 import { useNavigate } from 'react-router-dom';
 
 const LoginSignupBaseComponent = ({children,message , navigateToPath , messagestarting,messageEnding}) => {

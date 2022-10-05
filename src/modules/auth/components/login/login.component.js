@@ -1,10 +1,11 @@
 import React from "react"
 import { RegisterContext } from "../../../shared/context/register.context";
-import LoginSignupBaseComponent from "../login-signup-base/base.component"
+
 import { useForm } from 'react-hook-form';
 import OutlinedInput from "../../../shared/components/input/input.component";
 import Button from "../../../shared/components/button/button.component";
 import { ApiService } from '../../../shared/service/api.service';
+import LoginSignupBaseComponent from "../../shared/component/login-signup-base/base.component";
 const LoginComponent = () => {
 
     const _apiService = new ApiService();

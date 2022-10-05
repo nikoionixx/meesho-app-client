@@ -1,7 +1,7 @@
 import React from "react";
+import LoginSignupBaseComponent from "../../shared/component/login-signup-base/base.component";
 
 import SignupFormComponent from "./form/signup-form.component";
-import LoginSignupBaseComponent from "../login-signup-base/base.component";
 
 
 const SingupComponent = () => {
