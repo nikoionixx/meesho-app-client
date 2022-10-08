@@ -9,6 +9,7 @@ import FormError from "../../../../shared/components/error/error.component";
 import FormSuccess from "../../../../shared/components/success/success.component";
 import { SUCCESS_CODE } from "../../../../../constants/code.constants";
 import { useNavigate } from 'react-router-dom';
+import { faAtom, faEnvelope, faLock, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const SignupFormComponent = () => {
   const {
@@ -46,11 +47,13 @@ const SignupFormComponent = () => {
         <OutlinedInput
           label={"First Name"}
           name={"firstName"}
+          icon={faUser}
           validationSchema={{ required: true }}
         ></OutlinedInput>
         <OutlinedInput
           label={"Last Name"}
           name={"lastName"}
+          icon={faUser}
           validationSchema={{ required: true }}
         ></OutlinedInput>
         <OutlinedInput
@@ -62,16 +65,19 @@ const SignupFormComponent = () => {
             pattern:
               '/^(([^<>()[]\\.,;:s@"]+(.[^<>()[]\\.,;:s@"]+)*)|(".+"))@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}])|(([a-zA-Z-0-9]+.)+[a-zA-Z]{2,}))$/',
           }}
+          icon={faEnvelope}
         ></OutlinedInput>
         <OutlinedInput
           label={"Phone Number"}
           name={"phoneNumber"}
           validationSchema={{ required: true, minLength: 10 }}
+          icon={faPhone}
         ></OutlinedInput>
         <OutlinedInput
           type="password"
           label={"Password"}
           name={"password"}
+          icon={faLock}
           validationSchema={{
             required: true,
             pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$",
@@ -81,6 +87,7 @@ const SignupFormComponent = () => {
           type="password"
           label={"Confirm Password"}
           name={"confirmPassword"}
+          icon={faLock}
           validationSchema={{
             required: true,
             pattern: "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)[a-zA-Zd]{8,}$",

@@ -2,8 +2,11 @@ import {Input} from '@material-tailwind/react';
 import React, { useContext } from 'react';
 import { RegisterContext } from '../../context/register.context';
 import RenderIf from '../renderIf/renderIf';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const  OutlinedInput = ({label , type = 'text' ,validationSchema , name}) => {
+
+
+const  OutlinedInput = ({label , type = 'text' ,validationSchema , name , icon}) => {
     const {register,errors} = useContext(RegisterContext);
     const errorKeyCount = Object.keys(errors);
     const isRequired = errorKeyCount.length > 0 && errors[name] && errors[name].type === 'required';
@@ -16,7 +19,7 @@ const  OutlinedInput = ({label , type = 'text' ,validationSchema , name}) => {
 
     return (
         <div className='flex flex-col gap-1'>
-                <Input {...register(name,validationSchema)} error={isRequired || isMinLength} variant='outlined' type={type} label={label} size={'lg'}></Input>
+                <Input {...register(name,validationSchema)} icon={<FontAwesomeIcon icon={icon} />} error={isRequired || isMinLength || isPattern} variant='outlined' type={type} label={label} size={'lg'}></Input>
                 <RenderIf isTrue={isRequired}>
                     <RenderError message={`${label} is required`}></RenderError>
                 </RenderIf>

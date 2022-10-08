@@ -7,7 +7,7 @@ import AuthService from '../../../services/auth.service';
 import { useState } from "react";
 import UtilService from "../../../../shared/service/util.service";
 import { SUCCESS_CODE } from "../../../../../constants/code.constants";
-
+import {  faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 const LoginFormComponent = () => {
 
@@ -34,12 +34,14 @@ const LoginFormComponent = () => {
           label={"EmailId"}
           type="email"
           name="emailId"
+          icon={faEnvelope}
           validationSchema={{required: true}}
         ></OutlinedInput>
         <OutlinedInput
           label={"Password"}
           type="password"
           name="password"
+          icon={faLock}
           validationSchema={{required: true}}
         ></OutlinedInput>
         <Button buttonTitle={"Login"} type={"submit"}></Button>
