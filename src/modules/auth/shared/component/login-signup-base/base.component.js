@@ -1,7 +1,7 @@
 import React from "react";
 import { MeeshoLogo } from '../../../../shared/components/logo/logo.component';
-import { TermsAndConditions } from '../../../../shared/components/termsandconditions/termsandconditions.component';
 import { useNavigate } from 'react-router-dom';
+import { TermsAndConditions } from "../termsandconditions/termsandconditions.component";
 
 const LoginSignupBaseComponent = ({children,message , navigateToPath , messagestarting,messageEnding}) => {
 

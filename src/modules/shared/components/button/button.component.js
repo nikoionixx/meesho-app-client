@@ -1,5 +1,5 @@
 import React from "react";
-import RenderIf from "../../util/renderIf";
+import RenderIf from "../renderIf/renderIf";
 
 const Button = ({buttonTitle , type = 'button' , handleSubmit}) => {
 
@@ -14,8 +14,6 @@ const Button = ({buttonTitle , type = 'button' , handleSubmit}) => {
                 <button type={type} onClick={handleSubmit} className={PRIMARY_BUTTON_CLASS_NAMES}>{buttonTitle}</button>
         </RenderIf>
         </React.Fragment>
-
-      
     );
 }
 

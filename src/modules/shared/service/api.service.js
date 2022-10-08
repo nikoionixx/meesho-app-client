@@ -1,14 +1,14 @@
-import AxiosInstance from "../../middleware/axios/axios.middleware";
+import AxiosInstance from "../../../middleware/axios/axios.middleware";
 
 export class ApiService {
 
     _axiosInstance = AxiosInstance;
 
-    get(url){
+    async get(url){
         return this._axiosInstance.get(url);
     }
 
-    post(url,data){
+    async post(url,data){
         return this._axiosInstance.post(url,data);
     }
 }
