@@ -9,7 +9,7 @@ import FormError from "../../../../shared/components/error/error.component";
 import FormSuccess from "../../../../shared/components/success/success.component";
 import { SUCCESS_CODE } from "../../../../../constants/code.constants";
 import { useNavigate } from 'react-router-dom';
-import { faAtom, faEnvelope, faLock, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLock, faPhone, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const SignupFormComponent = () => {
   const {
@@ -22,19 +22,32 @@ const SignupFormComponent = () => {
   const _utilService = new UtilService();
   const [formErrors, setFormErrors] = useState(null);
   const [formMessage, setFormMessage] = useState(null);
+  const [isLoader,setLoader] = useState(false); 
   const navigate = useNavigate();
+
   const onSubmit = async (data) => {
     setFormErrors(null);
     setFormMessage(null);
-    const axiosres = await _authService
+    setLoader(true);
+    const axiosRes = await _authService
       .signup(data)
-      .catch((err) => setFormErrors(_utilService.parseErrorResponseMessage(err)));
-    const parsedResult = _utilService.parseSuccessResponse(axiosres);
+      .catch((err) => {
+        setLoader(false);
+        setFormErrors(_utilService.parseErrorResponseMessage(err))
+      });
+    setTimeout(() => {
+      _postSuccessResponse(axiosRes);
+    },2000);
+  };
+
+  function _postSuccessResponse(axiosRes){
+    setLoader(false);
+    const parsedResult = _utilService.parseSuccessResponse(axiosRes);
     if(parsedResult.code === SUCCESS_CODE.SUCCESS_RESPONSE)
     setFormMessage(parsedResult.message);
     reset();
     navigate('/login');
-  };
+  }
 
   return (
     <RegisterContext.Provider value={{ register, errors }}>
@@ -94,7 +107,7 @@ const SignupFormComponent = () => {
           }}
         ></OutlinedInput>
 
-        <Button type="submit" buttonTitle={"Signup"}></Button>
+        <Button type="submit" isLoader={isLoader} buttonTitle={"Signup"}></Button>
       </form>
     </RegisterContext.Provider>
   );

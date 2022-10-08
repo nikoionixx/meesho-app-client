@@ -5,7 +5,7 @@ const FormError = ({ errors }) => {
     
   function _renderErrors(errors) {
     if (errors)
-    return errors.map((error) => <span>{error}</span>);
+    return errors.map((error,index) => <span key={index}>{error}</span>);
     else return <span>Unkown Error</span>;
   }
 

@@ -1,5 +1,3 @@
-import { SUCCESS_CODE } from "../../../constants/code.constants";
-
 class UtilService {
 
     parseErrorResponseMessage = (err) => {
@@ -10,6 +8,7 @@ class UtilService {
     }
     
     parseSuccessResponse = (res) => {
+        console.log(res);
         if('data' in res){
             return res.data;
         }
