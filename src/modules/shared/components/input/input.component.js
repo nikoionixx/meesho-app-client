@@ -1,6 +1,6 @@
 import {Input} from '@material-tailwind/react';
 import React, { useContext } from 'react';
-import { RegisterContext } from '../../context/register.context';
+import { RegisterContext } from '../../../auth/context/register.context';
 import RenderIf from '../renderIf/renderIf';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

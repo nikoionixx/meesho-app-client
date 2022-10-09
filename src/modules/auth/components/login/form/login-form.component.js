@@ -1,6 +1,6 @@
 import Button from "../../../../shared/components/button/button.component";
 import OutlinedInput from "../../../../shared/components/input/input.component";
-import { RegisterContext } from "../../../../shared/context/register.context";
+
 import { useForm } from 'react-hook-form';
 import FormError from "../../../../shared/components/error/error.component";
 import AuthService from '../../../services/auth.service';
@@ -12,6 +12,8 @@ import Storage from '../../../../shared/service/storage.service';
 import { useDispatch } from "react-redux";
 import { setUser } from "../../../../../middleware/redux/actions/user.actions";
 import { useNavigate } from "react-router-dom";
+import { RegisterContext } from "../../../context/register.context";
+
 
 const LoginFormComponent = () => {
 

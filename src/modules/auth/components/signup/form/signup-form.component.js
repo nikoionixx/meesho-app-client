@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import OutlinedInput from "../../../../shared/components/input/input.component";
 import Button from "../../../../shared/components/button/button.component";
 import { useForm } from "react-hook-form";
-import { RegisterContext } from "../../../../shared/context/register.context";
+import { RegisterContext } from "../../../context/register.context";
 import AuthService from "../../../services/auth.service";
 import UtilService from "../../../../shared/service/util.service";
 import FormError from "../../../../shared/components/error/error.component";
