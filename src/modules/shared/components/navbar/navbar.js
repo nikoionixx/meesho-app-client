@@ -8,7 +8,7 @@ import { faMobileScreen, faShop } from "@fortawesome/free-solid-svg-icons";
 
 const NavbarComponent = () => {
     return (
-        <div className="w-full border-b bg-white">
+        <div className="w-full border-b bg-white fixed top-0">
             <div className="container mx-auto flex py-4 justify-between items-center">
             <div className="flex gap-5">
                 <MeeshoLogo />

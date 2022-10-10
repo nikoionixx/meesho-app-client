@@ -7,3 +7,10 @@ export const setProducts = (products) => {
         payload : products
     }
 }
+
+export const setProduct = (product) => {
+    return {
+        type : ProductActionTypes.SET_PRODUCT,
+        payload: product
+    }
+}

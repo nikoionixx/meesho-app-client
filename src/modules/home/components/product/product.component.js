@@ -15,7 +15,9 @@ const ProductComponent = () => {
   const [isLoader,setLoader] = useState(false);
   const products = useSelector((state) => state.product.allProducts);
   useEffect(() => {
-    _getAllProducts();
+    if(products.length === 0){
+      _getAllProducts();
+    }
   }, []);
 
   async function _getAllProducts() {
@@ -29,7 +31,7 @@ const ProductComponent = () => {
   }
 
   return (
-    <div className="flex mt-5 flex-col">
+    <div className="flex flex-col">
       <Typography variant={"h3"} className="mb-3">
         Products for you
       </Typography>
