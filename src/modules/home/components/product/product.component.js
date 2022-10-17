@@ -15,9 +15,7 @@ const ProductComponent = () => {
   const [isLoader,setLoader] = useState(false);
   const products = useSelector((state) => state.product.allProducts);
   useEffect(() => {
-    if(products.length === 0){
       _getAllProducts();
-    }
   }, []);
 
   async function _getAllProducts() {
